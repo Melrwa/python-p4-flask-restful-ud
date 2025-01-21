@@ -37,12 +37,9 @@ class Newsletters(Resource):
 
     def get(self):
         
-        response_dict_list = [n.to_dict() for n in Newsletter.query.all()]
+        response_dict_list = [newsletter.to_dict() for newsletter in Newsletter.query.all()]
 
-        response = make_response(
-            response_dict_list,
-            200,
-        )
+        response = make_response(response_dict_list, 200, )
 
         return response
 
